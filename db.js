@@ -1,8 +1,11 @@
 import mongoose from 'mongoose'
-
+import dotenv from 'dotenv'
+dotenv.config({
+    path:'./.env'
+})
 //connection
-const mongoURL = 'mongodb://localhost:27017/hotels';
-mongoose.connect(mongoURL)
+
+mongoose.connect(process.env.MONGOURL)
 
 //Get the default connection
 //MongoDB maintains default connection object represnting mongodb connection

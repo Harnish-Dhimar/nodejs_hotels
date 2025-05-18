@@ -2,9 +2,13 @@ import db from './db.js'
 import express from 'express'
 import personRoute from './routes/personRoute.js'
 import menuRoute from './routes/menuRoute.js'
+import dotenv from 'dotenv'
+dotenv.config({
+    path:'./.env'
+})
 
 const app = express()
-const port = 3000
+const port = process.env.PORT
 app.use(express.json())
 
 
